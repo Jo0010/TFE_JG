@@ -1,0 +1,23 @@
+body{
+    background-image: url('/ada/view/images/Bemel 129 = Home1.JPG');
+                background-position:center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+          min-height: 100%;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+         
+}
+.container_contact{padding:6%}  
+.h5{ font-weight: bold; color: #000000;}
+.container_gallery{padding:6%;
+    background: rgba(204, 204, 204, 0.5);
+}
+.container_gallery p{
+    padding:2%;
+    text-align: center;
+}
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%);
+}
