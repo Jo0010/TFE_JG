@@ -13,12 +13,14 @@ $bigestId=$project->getBigId();
 
 $allProj=$project->getAllProjects();
 
-
+/* redirection vers la gallery */
 if(isset($_GET['gallery']))
 {
     
     header("location:../View/gallery.php");
 }
+
+/* effacer un projet */
 if(isset($_GET['deleteProj']))
 {
     $im= new Images();
@@ -28,6 +30,7 @@ if(isset($_GET['deleteProj']))
     header("location:../View/gallery.php");
 }
 
+/* effacer une image */
 if(isset($_GET['imagesup']))
 {
     $name=$img->getIdFromName($_GET['imagesup']);
@@ -35,14 +38,18 @@ if(isset($_GET['imagesup']))
     header("location:../View/gallery.php");
 }
 
+/* ajouter un projet */
 if(isset($_POST['addProject']))
 {  
+    
     $proj = new Project();
     $proj->setDescription($_POST['projDesc']);
     $proj->setId_project(0);
     $proj->addProject($proj);
     header("location:../View/gallery.php");
 }
+
+/* modifier une description */
 if(isset($_GET['newDesc']))
 {    
     $project->edditProject($_GET['newDesc'],$_GET['idp']);
@@ -50,8 +57,8 @@ if(isset($_GET['newDesc']))
     var_dump($_GET['idp']); */
     header("location:../View/gallery.php");
 }
-/* ajout d'image */
 
+/* ajout d'image */
 if(isset($_POST["submit"])) {
     
     $countfiles = count($_FILES["fileToUpload"]["name"]);

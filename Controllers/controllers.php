@@ -5,6 +5,7 @@ session_start();
 
 $wrong = false;
 
+/* connection */
 if((isset($_POST["loggin"]))&&(isset($_POST["password"])))
 {
     $nom= new Admin();
@@ -22,26 +23,27 @@ if((isset($_POST["loggin"]))&&(isset($_POST["password"])))
     } 
     
 }
-/* 
-$hash = password_hash($_POST["password"], PASSWORD_BCRYPT);
-var_dump($hash);
-$auth = password_verify($_POST["password"],$hash);
-var_dump($auth);
- */
+/* deconnection */
 if(isset($_GET['logout']))
 {
     $adm = new Admin();
     $adm->logoutSes();
     header("location:../View/home.php");
 }
+
+/* redirection */
 if(isset($_GET['contact']))
 {
     header("location:../View/contact.php");
 }
+
+/* redirection */
 if(isset($_GET['home']))
 {
     header("location:../View/home.php");
 }
+
+/* redirection */
 if(isset($_GET['apropos']))
 {
     header("location:../View/apropos.php");

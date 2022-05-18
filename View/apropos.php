@@ -9,6 +9,7 @@
 
 <div class="container">
   <div class="row">
+    <!-- article -->
     <div class="col-sm-2">
       </div>
       <div class="col-sm-8" style="padding:5%">

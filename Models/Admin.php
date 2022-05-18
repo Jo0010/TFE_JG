@@ -45,7 +45,7 @@ class Admin {
 
         return $this;
     }
-
+    /* connection base de donné */
     public function connection()
     {
         try 
@@ -82,6 +82,8 @@ class Admin {
         }
         return false;
     }
+
+    /* future update */
     function edditAdmin($admin)
     {
         $mysqlClient = $this->connection();
@@ -93,7 +95,7 @@ class Admin {
             'email'=> $admin->getEmail(),
         ]);
     }
-
+    /* recuperation des admins */
     function getAllAdmin()
     {
         $db = $this->connection();

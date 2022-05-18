@@ -6,6 +6,7 @@
 </style>
 <div class="container">
   <div class="row">
+    <!-- contact info -->
     <div class="col-sm-3"></div>
     <div class="col-sm-6" style="background: rgba(204, 204, 204,
     0.5);padding:5%">

@@ -98,6 +98,7 @@ class Images
         ]);
     }
 
+    /* retourne les images liee au projet */
     function imageProject ($id_project)
     {
         $db = $this->connection();
@@ -118,6 +119,7 @@ class Images
         $tabImg = $imgStat->fetchAll(PDO::FETCH_COLUMN);
         return $tabImg;
     }
+    /* retourner les id des images d un projet */
     function getAllIdProject($id_project)
     {
         $db = $this->connection();
@@ -128,14 +130,13 @@ class Images
         return $tabImg;
     }
     function deleteImg($id_img)
-    
     {
         $db = $this->connection();
         $deleteImg = $db->prepare('DELETE FROM images WHERE id_img=:id_img');
         $deleteImg->bindParam(':id_img', $id_img, PDO::PARAM_INT);
         $deleteImg->execute() or die(print_r($db->errorInfo()));
     }
-
+    /* effacer toutes les images d un projet */
     function deleteAllImg($id_project)
     {
         $db = $this->connection();
@@ -156,6 +157,7 @@ class Images
         return $tabImg;
     }
 
+    /* retourner id d une image depuis son nom */
     function getIdFromName($name)
     {
         $db = $this->connection();
@@ -167,6 +169,7 @@ class Images
    
     }
 
+    /* retourner le nom d une image depuis son id */
     function getNamefromId($id_img)
     {
         $db = $this->connection();

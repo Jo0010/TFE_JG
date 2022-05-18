@@ -2,11 +2,7 @@
 include 'header.php';
 include '../Controllers/controllerProject.php';
 ?>
-<style>
-    
-   
-    
-  </style>
+
 <div class="container_gallery">
   <div class="rows">
     <?php
@@ -23,7 +19,8 @@ include '../Controllers/controllerProject.php';
       if($_SESSION['administrator'])
       {
     ?>
-    <form action='/ada/Controllers/controllerProject.php' method='post'>
+    <!-- rajouter un projet -->
+    <form action='../Controllers/controllerProject.php' method='post'>
      <label for="project"><h4>Ajouter un projet</h4> </label>
        <div class="mb-3 mt-3">
          <label for="comment">Description:</label>
@@ -38,6 +35,7 @@ include '../Controllers/controllerProject.php';
   </div>
   </br>
   <div class="row">
+    <!-- boucle qui affiche tout les projets -->
     <?php 
     $g=0;
     foreach($allProjId as $idProj)
@@ -60,17 +58,17 @@ include '../Controllers/controllerProject.php';
         
           
             <?php
-            if($a==0)
+            if($a==0) /* permet de mettre la premiere image du projet active (carousel) */
             {?>
               <div class="carousel-item active">
-                <img src="/ada/View/images/<?php echo $allImgFromProject[0]; ?>" alt="img" class="mx-auto d-block" >
+                <img src="../View/images/<?php echo $allImgFromProject[0]; ?>" alt="img" class="mx-auto d-block" >
               </div>
             <?php 
             }
             else{
               ?>
                 <div class="carousel-item">
-                  <img src="/ada/View/images/<?php echo $allImgFromProject[$a]; ?>" alt="img" class="mx-auto d-block" >
+                  <img src="../View/images/<?php echo $allImgFromProject[$a]; ?>" alt="img" class="mx-auto d-block" >
                 </div>
               <?php
             }
@@ -79,6 +77,7 @@ include '../Controllers/controllerProject.php';
       }
       ?>
       </div>
+      <!-- bouton du carousel -->
       <button class="carousel-control-prev" type="button" data-bs-target="#gallery<?php echo "$g"; ?>" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
           </button>
@@ -96,9 +95,9 @@ include '../Controllers/controllerProject.php';
     <div class="container_description">
     <div class="row">
       
-      <!-- ajouetr image -->
-      <form action='/ada/Controllers/controllerProject.php' method='post' enctype='multipart/form-data'>
-        Selectionner les images:
+      <!-- ajouter image -->
+      <form action='../Controllers/controllerProject.php' method='post' enctype='multipart/form-data'>
+         <h4>Selectionner les images</h4>
         <input type="file" name="fileToUpload[]" id="fileToUpload" multiple>
         <input id="idp" name="idp" type="hidden" value="<?php echo $idProj[0]; ?>">
         <input type="submit" class="btn btn-secondary" value="Ajouter des images" name="submit">
@@ -107,10 +106,11 @@ include '../Controllers/controllerProject.php';
     </br>
       <div class="row">
       <!-- supprimer image -->
-        <form action="/ada/Controllers/controllerProject.php" method="GET">
+        <form action="../Controllers/controllerProject.php" method="GET">
           <label for="sel1" class="form-label">Choisir l'image à supprimer:</label>
           <select class="form-select" id="sel1" name="imagesup">
           <?php 
+          /* permet d afficher les noms des photos */
             for($v=0;$v<count($tabName);$v++)
             {
             ?>
@@ -141,8 +141,8 @@ include '../Controllers/controllerProject.php';
       ?>
       </br>
       <div class="row">
-
-      <form action="/ada/Controllers/controllerProject.php">
+        <!-- modifier la description -->
+      <form action="../Controllers/controllerProject.php">
         <div class="mb-3 mt-3">
           <label for="comment">Description:</label>
           <textarea class="form-control" rows="5" id="comment" name="newDesc"></textarea>
@@ -154,7 +154,7 @@ include '../Controllers/controllerProject.php';
       </br>
     <div class="row">      
         <!-- supprimer projet -->
-        <a href="/ada/Controllers/controllerProject.php?deleteProj&proj=<?php echo $idProj[0]; ?>" class="btn btn-danger">supprimer un projet</a>        
+        <a href="../Controllers/controllerProject.php?deleteProj&proj=<?php echo $idProj[0]; ?>" class="btn btn-danger">supprimer un projet</a>        
       <?php 
         }
       ?>

@@ -43,6 +43,7 @@ class Project {
         }
     }
 
+
     function addProject($project)
     {
         $db = $this->connection();
@@ -50,10 +51,10 @@ class Project {
         $insertProject = $db->prepare($sqlQuery);
         $insertProject->execute([
             'description'=> $project->getDescription(),
-        ]);
-      
+        ]);  
         
     }
+
     function edditProject($description,$id_project)
     {
         $mysqlClient = $this->connection();
@@ -83,6 +84,7 @@ class Project {
         return $tabProject;
     }
 
+    /* retourner le plus gros id */
     function getBigId()
     {
         $db = $this->connection();
@@ -94,6 +96,7 @@ class Project {
 
     }
 
+    
     function getAllId()
     {
         $db = $this->connection();
@@ -113,23 +116,6 @@ class Project {
         $tabDesc = $desc->fetchAll(PDO::FETCH_COLUMN);
         return $tabDesc;
     }
-   /*  function addimage($_FILES)
-    {
-        if ((isset($_FILES['img']))&& ($_FILES['img']['error']==0)) 
-        {
-            if($_FILES['img']['size']<=1000000)
-            {
-                $fileInfo = pathinfo($_FILES['img']['name']);
-                $extension = $fileInfo['extension'];
-                $allowedExtensions = ['jpg','jpeg','gif','png'];
-                if (in_array($extension, $allowedExtensions))
-                {
-                     
-                }
-            }
-        }
-    } */
-
-
+   
 }
 ?>

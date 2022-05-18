@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="/ada/View/images/icon.png">
+    <link rel="icon" href="../View/images/icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
   <div class="col-sm-3">
 
     <a class="navbar-brand" href="../Controllers/controllers.php?home">
-      <img src="/ada/View/images/logo_ada2.png" style="width: 50%" >
+      <img src="../View/images/logo_ada2.png" style="width: 50%" >
     </a>
   </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
@@ -33,16 +33,16 @@
       <!-- Links -->
       <ul class="navbar-nav justify-content-center">
         <li class="nav-item">
-          <a class="nav-link" href="../Controllers/controllers.php?home">Home</a>
+          <a class="nav-link" href="../Controllers/controllers.php?home"><h5>Home</h5></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../Controllers/controllerProject.php?gallery">Gallerie</a>
+          <a class="nav-link" href="../Controllers/controllerProject.php?gallery"><h5>Gallerie</h5></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../Controllers/controllers.php?apropos">A propos</a>
+          <a class="nav-link" href="../Controllers/controllers.php?apropos"><h5>A propos</h5></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../Controllers/controllers.php?contact">Contacte</a>
+          <a class="nav-link" href="../Controllers/controllers.php?contact"><h5>Contacte</h5></a>
         </li>
       </ul>
     </div>
@@ -63,7 +63,7 @@
           
         <ul class="d-flex">
           
-          <a href="/ada/Controllers/controllers.php?logout" class="btn btn-secondary">logout</a>
+          <a href="../Controllers/controllers.php?logout" class="btn btn-secondary">logout</a>
         </ul>
       <?php
       }

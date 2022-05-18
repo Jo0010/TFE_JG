@@ -1,6 +1,6 @@
 <?php include 'header.php';?>
   <div class="container">
-    <form action="/ada/Controllers/controllers.php" method="post">
+    <form action="../Controllers/controllers.php" method="post">
     <div class="row">
       <div class="col-md-4"></div>
         <div class="col-md-4">
@@ -26,7 +26,6 @@
             {
               echo "Wrong";
             }
-          
           ?>
         </div>
       </div>
