@@ -1,0 +1,3 @@
+RewriteCond %{REQUEST_FILENAME} !-f<br>
+RewriteCond %{REQUEST_FILENAME} !-d<br>
+RewriteRule ^([^?]*)$ /index.php [NC,L,QSA]</p>
